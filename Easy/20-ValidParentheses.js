@@ -29,6 +29,34 @@
 //   }
 //   return true;
 // };
+// var isValid = function (s) {
+//   if (s.length % 2 !== 0) return false;
+// const map = {
+//   "{": "}",
+//   "[": "]",
+//   "(": ")",
+// };
+// if (
+//   s.indexOf(map["{"]) === -1 &&
+//   s.indexOf(map["["]) === -1 &&
+//   s.indexOf(map["("]) === -1
+// ) {
+//   return false;
+// }
+
+// const temp = [];
+// for (let i = 0; i < s.length; i++) {
+//   if (s[i] === "{" || s[i] === "[" || s[i] === "(") {
+//     temp.push(s[i]);
+//   } else {
+//     let topElement = temp.pop();
+//     if (map[topElement] !== s[i]) {
+//       return false;
+//     }
+//   }
+// }
+// return temp.length > 0 ? false : true;
+// };
 var isValid = function (s) {
   const arr = [];
   for (let i = 0; i < s.length; i++) {

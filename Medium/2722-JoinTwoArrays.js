@@ -24,22 +24,38 @@
 // };
 
 // Working Approach
+// var join = function (arr1, arr2) {
+//   let result = {};
+//   for (let i = 0; i < arr1.length; i++) {
+//     result[arr1[i].id] = arr1[i];
+//   }
+//   console.log(result);
+//   for (let i = 0; i < arr2.length; i++) {
+//     if (result[arr2[i].id]) {
+//       for (const key in arr2[i]) {
+//         console.log(key);
+//         result[arr2[i].id][key] = arr2[i][key];
+//       }
+//     } else {
+//       result[arr2[i].id] = arr2[i];
+//     }
+//   }
+//   return Object.values(result);
+// };
 var join = function (arr1, arr2) {
+  let items = arr1.concat(arr2);
+
   let result = {};
-  for (let i = 0; i < arr1.length; i++) {
-    result[arr1[i].id] = arr1[i];
-  }
-  console.log(result);
-  for (let i = 0; i < arr2.length; i++) {
-    if (result[arr2[i].id]) {
-      for (const key in arr2[i]) {
-        console.log(key);
-        result[arr2[i].id][key] = arr2[i][key];
-      }
-    } else {
-      result[arr2[i].id] = arr2[i];
+
+  for (const obj of items) {
+    if (!result[obj.id]) {
+      result[obj.id] = obj;
+      continue;
     }
+
+    result[obj.id] = { ...result[obj.id], ...obj };
   }
+
   return Object.values(result);
 };
 const arr1 = [

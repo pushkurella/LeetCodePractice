@@ -36,3 +36,24 @@ var singleNumber = function (nums) {
   }
   return result;
 };
+
+var singleNumber = function (nums) {
+  let count = 0;
+  let majority = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (count === 0) {
+      majority = nums[i];
+      count = 1;
+    }
+    if (nums[i] === majority) {
+      count++;
+    } else {
+      count--;
+    }
+  }
+  return majority;
+};
+var majorityElement = function (nums) {
+  nums = nums.sort((a, b) => a - b);
+  return nums[Math.floor(nums.length / 2)];
+};
