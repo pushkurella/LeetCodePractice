@@ -32,7 +32,8 @@ var isPalindrome = function (head) {
 
 // Fantastic approach
 var isPalindrome = function (head) {
-  let string1 = (string2 = "");
+  let string1 = "",
+    string2 = "";
   let node = head;
 
   while (node != null) {

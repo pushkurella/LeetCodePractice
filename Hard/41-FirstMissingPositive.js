@@ -17,4 +17,19 @@ const firstMissingPositive = function (nums) {
 
   return min;
 };
+
+// Better approach
+const firstMissingPositive = function (nums) {
+  let set = new Set(),
+    res = 1;
+  for (let ele of nums) {
+    if (ele > 0) {
+      set.add(ele);
+    }
+  }
+  while (set.has(res)) {
+    ++res;
+  }
+  return res;
+};
 console.log(firstMissingPositive([2, 3]));
