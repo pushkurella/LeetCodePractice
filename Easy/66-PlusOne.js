@@ -5,16 +5,29 @@
 //   return result.toString().split("");
 // };
 
-var plusOne = function (digits) {
-  for (var i = digits.length - 1; i >= 0; i--) {
-    digits[i] = digits[i] + 1;
-    if (digits[i] > 9) {
-      digits[i] = 0;
+// var plusOne = function (digits) {
+//   for (var i = digits.length - 1; i >= 0; i--) {
+//     digits[i] = digits[i] + 1;
+//     if (digits[i] > 9) {
+//       digits[i] = 0;
+//     } else {
+//       return digits;
+//     }
+//   }
+//   digits.unshift(1);
+//   return digits;
+// };
+var plusOne = function (arr) {
+  for (let i = arr.length - 1; i >= 0; i--) {
+    arr[i] = arr[i] + 1;
+    if (arr[i] > 9) {
+      arr[i] = 0;
     } else {
-      return digits;
+      return arr;
     }
   }
-  digits.unshift(1);
-  return digits;
+  arr.unshift(1);
+  return arr;
 };
-console.log(plusOne([1, 2, 4, 8]));
+
+console.log(plusOne([1, 2, 3, 4]));
