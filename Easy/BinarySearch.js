@@ -31,3 +31,5 @@ function Search(arr, target, start, end) {
 }
 
 console.log(RecursiveBinarySearch([-5, 2, 4, 6, 10], 10));
+const map = new Map();
+map.size;
