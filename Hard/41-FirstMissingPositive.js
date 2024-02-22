@@ -19,7 +19,7 @@ const firstMissingPositive = function (nums) {
 };
 
 // Better approach
-const firstMissingPositive = function (nums) {
+const firstMissingPositive2 = function (nums) {
   let set = new Set(),
     res = 1;
   for (let ele of nums) {

@@ -1,4 +1,4 @@
-// find longest word in a sentense ignore pronunciation
+// find longest word in a sentence ignore pronunciation
 function LongestWord(sen) {
   let arr = sen.split(" ");
   arr = arr.map((a) => a.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, ""));
